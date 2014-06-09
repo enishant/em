@@ -38,13 +38,13 @@ CREATE TABLE `transactions_category` (
 );
 
 CREATE TABLE `category_relationship` (
-  `rel_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `cat_id` bigint(20) NOT NULL,
-  `cat_parent` bigint(20) NOT NULL,
-  PRIMARY KEY (`rel_id`),
-  UNIQUE KEY `cat_relation` (`cat_id`,`cat_parent`),
-  FOREIGN KEY (cat_id) REFERENCES transactions_category(cat_id),
-  FOREIGN KEY (cat_parent) REFERENCES transactions_category(cat_id)
+	rel_id bigint(20) NOT NULL AUTO_INCREMENT,
+	cat_id bigint(20) NOT NULL,
+	cat_parent bigint(20) NOT NULL,
+	PRIMARY KEY (`rel_id`),
+	UNIQUE KEY `cat_relation` (`cat_id`,`cat_parent`),
+	FOREIGN KEY (cat_id) REFERENCES transactions_category(cat_id),
+	FOREIGN KEY (cat_parent) REFERENCES transactions_category(cat_id)
 );
 
 CREATE TABLE `transactions` (
